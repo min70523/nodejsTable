@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+</head>
+<style>
+    .container{
+        margin-top: 50px;
+        height: auto;
+        box-shadow: 0 0 50px 1px rgba(0,0,0,0.3);
+        padding-bottom:5px;
+    }
+</style>
+<body>
+<div class="container">
+    <div role="tabpanel" class="table table-striped table-bordered table-hover">
+        <h3 style="text-align: center">用户表</h3>
+    <table class="table table-bordered table-striped">
+        <tr>
+            <th>id</th>
+            <th>姓名</th>
+            <th>年龄</th>
+            <th>性别</th>
+            <th>操作</th>
+        </tr>
+
+
+            <% for(var i=0;i<result.length;i++){ %>
+        <tr>
+            <td>
+                <%=result[i].id%>
+            </td>
+            <td>
+                <%=result[i].name%>
+            </td>
+            <td>
+                <%=result[i].age%>
+            </td>
+            <td>
+                <%=result[i].sex%>
+            </td>
+            <td>
+                <a class="btn btn-default" href="/update/<%=result[i].id%>" role="button">编辑</a>
+                <a class="btn btn-default" href="/del/<%=result[i].id%>" role="button">删除</a>
+
+            </td>
+        </tr>
+            <%}%>
+
+    </table>
+    <a class="btn btn-default" href="/add" role="button"><span class="glyphicon glyphicon-plus"></span>添加</a>
+</div>
+</div>
+<ul>
+
+</ul>
+</body>
+</html>
